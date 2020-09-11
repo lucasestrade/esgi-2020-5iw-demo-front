@@ -1,0 +1,4 @@
+node_modules
+.idea
+dist/bundle.min.css
+dist/bundle.min.js

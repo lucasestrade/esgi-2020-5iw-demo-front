@@ -1,0 +1,45 @@
+{
+  "name": "todolist-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "director": "^1.2.8",
+    "todomvc-app-css": "^2.3.0",
+    "todomvc-common": "^1.0.5",
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
+    "jest": "^26.4.2",
+    "mini-css-extract-plugin": "^0.11.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss-loader": "^4.0.1",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "docker-build": "docker build -f ./Dockerfile.preprod -t todolist-front-preprod . && docker build -f ./Dockerfile.prod -t todolist-front-prod .",
+    "start:prod": "docker run -it -p 8080:8080 --rm todolist-front-prod",
+    "start:preprod": "docker run -it -p 8080:8080 --rm todolist-front-preprod",
+    "webpack:preprod": "NODE_ENV=preprod webpack --mode=development",
+    "webpack:prod": "NODE_ENV=prod webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/tomdelie/esgi-2020-5iw-demo-front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/tomdelie/esgi-2020-5iw-demo-front/issues"
+  },
+  "homepage": "https://gitlab.com/tomdelie/esgi-2020-5iw-demo-front#readme"
+}
